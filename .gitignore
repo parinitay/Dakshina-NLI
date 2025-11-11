@@ -1,0 +1,76 @@
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+src/venv/
+.env/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temp files
+*.log
+*.pot
+*.tmp
+*.swp
+*.bak
+
+# VS Code
+.vscode/
+.history/
+
+# macOS / Windows junk
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Coverage and testing
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Data files (optional - comment out if you want to push them)
+*.npy
+*.npz
+*.wav
+*.csv
+*.h5
+*.pkl
+*.joblib
+
+# Model weights (optional)
+*.pt
+*.pth
+*.h5
+
+# Temporary audio or output files
+temp.wav
+test.wav
+output/
+results/
+checkpoints/
+
+# Node / frontend (if used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
