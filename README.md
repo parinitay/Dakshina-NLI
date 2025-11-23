@@ -52,43 +52,7 @@ Robustness & interpretability graphs
 
 📁 Project Structure
 
-speech-accent-project/
-│
-├── data/
-│   ├── IndicAccentDB/              # Main dataset
-│   ├── features/                   # Saved .npy features
-│   ├── word_samples/               # Word-level evaluation samples
-│   ├── sentence_samples/           # Sentence-level evaluation samples
-│   └── child_test/                 # Child audio for generalization
-│
-├── models/
-│   ├── accent_classifier.pkl
-│   └── label_encoder.pkl
-│
-├── src/
-│   ├── train_classifier_from_features.py
-│   ├── evaluate_model.py
-│   ├── predict_accent.py
-│   ├── hubert_feature_extraction.py
-│   ├── features_mfcc.py
-│   │
-│   ├── layer_analysis_clean.py
-│   ├── plot_layer_accuracy.py
-│   │
-│   ├── extract_words_sentences.py
-│   ├── evaluate_words_vs_sentences.py
-│   ├── words_sentences_confusion.py
-│   ├── words_sentences_barplot.py
-│   │
-│   ├── test_child_generalization.py
-│   ├── child_confusion_matrix.py
-│   ├── child_results_plot.py
-│   │
-│   ├── robustness_visualization.py
-│   ├── interpretability_plot.py
-│   └── visuals.py
-│
-└── README.md
+<img width="1024" height="1024" alt="ChatGPT Image Nov 24, 2025, 12_15_15 AM" src="https://github.com/user-attachments/assets/812c1b8a-b9ee-4052-8050-bdf9eeaf96c1" />
 
 
 🔧 Installation
