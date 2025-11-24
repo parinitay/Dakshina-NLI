@@ -9,7 +9,8 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
   Fully interactive Streamlit UI    
 
  🗂️ Project Structure
-![Uploading output-onlinetools.png…]()
+!<img width="870" height="4368" alt="output-onlinetools" src="https://github.com/user-attachments/assets/db5879fb-5b21-4320-8d78-a266413564c7" />
+
 
 
 📦 Installation & Setup
