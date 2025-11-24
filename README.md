@@ -9,26 +9,8 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
   Fully interactive Streamlit UI    
 
  🗂️ Project Structure
-Dakshina-NLI/
-│
-├── data/
-│ ├── IndicAccentDB/ # HuggingFace dataset
-│ ├── features/ # Extracted MFCC / HuBERT features
-│ └── test_audio/ # Sample audio for testing
-│
-├── models/
-│ ├── accent_model.pkl # Trained logistic regression model
-│ ├── label_encoder.pkl # Label encoder for accents
-│
-├── src/
-│ ├── app.py # Streamlit full application
-│ ├── visuals.py # MFCC / HuBERT visualizations
-│ ├── evaluate.py # Evaluation & metrics
-│ ├── train_classifier.py # Training script
-│ └── utils/ # Preprocessing utilities
-│
-├── requirements.txt
-└── README.md
+![Uploading output-onlinetools.png…]()
+
 
 📦 Installation & Setup
 1️⃣ Clone the Repository
