@@ -50,7 +50,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 
-PROJECT EXECUTION PIPELINE
+> PROJECT EXECUTION PIPELINE
 
 python preprocess.py	              Cleans dataset, filters corrupted audio, normalizes sampling rate
 
@@ -58,7 +58,7 @@ python check_audio_quality.py    	 Detects corrupted or unreadable audio
 
 python make_clean_list.py         	Creates clean audio list used in all further processing
 
-FEATURE EXTRACTION
+> FEATURE EXTRACTION
 
 python features_mfcc.py	                Extracts MFCC features for each audio
 
@@ -67,7 +67,7 @@ python extract_all_features.py	         Extracts MFCC features for the entire da
 python combine_features.py	             Combines MFCC of all states into one feature matrix
 
 
-HuBERT Feature Extraction
+> HuBERT Feature Extraction
 
 
 hubert_feature_extraction.py      	Extracts HuBERT embeddings from each audio
@@ -77,7 +77,7 @@ python extract_words_sentences.py	        Extracts HuBERT features for words & s
 
 
 
-MODEL TRAINING
+> MODEL TRAINING
 
 Training directly from audio
 
@@ -85,29 +85,29 @@ python train_classifier.py             	Trains Logistic Regression on HuBERT emb
 
 
 
-Training from saved MFCC features
+> Training from saved MFCC features
 
 python train_classifier_from_features.py
 
 
-ACCURACY, METRICS, CONFUSION MATRIX
+> ACCURACY, METRICS, CONFUSION MATRIX
 
 python evaluate.py
 
 python confusion_style_metrics.py
 
 
-WORD vs SENTENCE ANALYSIS
+> WORD vs SENTENCE ANALYSIS
 
 python evaluate_words_vs_sentences.py
 
 
-GENERALIZATION TESTS (CHILDREN AUDIO)
+> GENERALIZATION TESTS (CHILDREN AUDIO)
 
 python test_child_generalization.py
 
 
-ROBUSTNESS & INTERPRETABILITY
+> ROBUSTNESS & INTERPRETABILITY
 
 python layer_analysis_clean.py
 
@@ -115,14 +115,14 @@ python interpretability_plot.py
 
 python robustness_visualization.py
 
-VISUALIZATIONS
+> VISUALIZATIONS
 
 python visualize_mfcc.py
 python visualize_hubert.py
 python visuals.py
 
 
-FINAL ACCENT PREDICTION
+> FINAL ACCENT PREDICTION
 
 python predict_accent.py
 
