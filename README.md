@@ -1,12 +1,12 @@
 🎙️ Dakshina — Native Language Identification of Indian English Speakers
-Dakshina is an AI-powered Accent Classification system that identifies **regional Indian English accents** and recommends **traditional cuisines** from the detected region.  
-It uses **HuBERT speech embeddings** and a **Logistic Regression classifier**, wrapped in a modern **Streamlit web application**
+Dakshina is an AI-powered Accent Classification system that identifies regional Indian English accents and recommends traditional cuisines from the detected region.  
+It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped in a modernStreamlit web applicatio
  Features
--  **Accent Detection** from uploaded or recorded audio  
--  **Cuisine Recommendation** based on predicted region  
--  Uses **HuBERT (facebook/hubert-base-ls960)** for speech embeddings  
+-  Accent Detection from uploaded or recorded audio  
+-  Cuisine Recommendation based on predicted region  
+-  Uses HuBERT (facebook/hubert-base-ls960) for speech embeddings  
 - Clean evaluation metrics (accuracy, confusion matrix, F1-score)  
--  Fully interactive **Streamlit UI**     
+-  Fully interactive Streamlit UI    
 
 ## 📁 Project Structure
 Dakshina-NLI/
