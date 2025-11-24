@@ -34,6 +34,15 @@ source venv/bin/activate
 4️⃣ Install Dependencies
 pip install -r requirements.txt
 
+> IMPORT DATASET
+
+Download IndicAccentDB dataset from [HuggingFace.](https://huggingface.co/datasets/DarshanaS/IndicAccentDb)
+
+Place all audio files in the data/ folder according to your structure.
+
+Ensure labels correspond to:
+andhra, kerala, karnataka, tamil, gujarat, jharkhand
+
 
 > PROJECT EXECUTION PIPELINE
 
@@ -43,21 +52,19 @@ python check_audio_quality.py    	 Detects corrupted or unreadable audio
 
 python make_clean_list.py         	Creates clean audio list used in all further processing
 
-> FEATURE EXTRACTION
+> mfcc Feature Extraction
 
-python features_mfcc.py	                Extracts MFCC features for each audio
+python src/extract_mfcc_features.py
 
-python extract_all_features.py	         Extracts MFCC features for the entire dataset
-
-python combine_features.py	             Combines MFCC of all states into one feature matrix
 
 
 > HuBERT Feature Extraction
 
+ python src/hubert_feature_extraction.py
 
-hubert_feature_extraction.py      	Extracts HuBERT embeddings from each audio
+> EVALUTION
 
-python extract_words_sentences.py	        Extracts HuBERT features for words & sentences
+  python src/evaluate_model.py
 
 
 
@@ -66,54 +73,56 @@ python extract_words_sentences.py	        Extracts HuBERT features for words & s
 
 Training directly from audio
 
-python train_classifier.py             	Trains Logistic Regression on HuBERT embeddings
+python src/train_classifier.py             	
 
 
 
 > Training from saved MFCC features
 
-python train_classifier_from_features.py
+python src/train_classifier_from_features.py
 
 
 > ACCURACY, METRICS, CONFUSION MATRIX
 
 python evaluate.py
 
-python confusion_style_metrics.py
+python src/confusion_style_metrics.py
 
 
 > WORD vs SENTENCE ANALYSIS
 
-python evaluate_words_vs_sentences.py
+python src/evaluate_words_vs_sentences.py
 
 
 > GENERALIZATION TESTS (CHILDREN AUDIO)
 
-python test_child_generalization.py
+python src/test_child_generalization.py
+
 
 
 > ROBUSTNESS & INTERPRETABILITY
 
-python layer_analysis_clean.py
+python src/layer_analysis_clean.py
 
-python interpretability_plot.py
+python src/interpretability_plot.py
 
-python robustness_visualization.py
+python src/robustness_visualization.py
 
 > VISUALIZATIONS
 
-python visualize_mfcc.py
-python visualize_hubert.py
-python visuals.py
+python src/visualize_mfcc.py
+python src/visualize_hubert.py
+python src/visuals.py
 
 
 > FINAL ACCENT PREDICTION
 
-python predict_accent.py
+python src/predict_accent.py
 
 
 ▶️ Running the Application
-Start Streamlit App
+> Start Streamlit App
+
 streamlit run src/app.py
 The web interface will open automatically on:
 http://localhost:8501
