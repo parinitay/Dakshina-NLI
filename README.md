@@ -1,12 +1,7 @@
 🎙️ Dakshina — Native Language Identification of Indian English Speakers
 Dakshina is an AI-powered Accent Classification system that identifies regional Indian English accents and recommends traditional cuisines from the detected region.  
 It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped in a modernStreamlit web application
- Features
-  Accent Detection from uploaded or recorded audio  
-  Cuisine Recommendation based on predicted region  
-  Uses HuBERT (facebook/hubert-base-ls960) for speech embeddings  
-  Clean evaluation metrics (accuracy, confusion matrix, F1-score)  
-  Fully interactive Streamlit UI    
+  
 
  🗂️ Project Structure
  
@@ -44,29 +39,22 @@ Ensure labels correspond to:
 andhra, kerala, karnataka, tamil, gujarat, jharkhand
 
 
-> PROJECT EXECUTION PIPELINE
 
-python preprocess.py	              Cleans dataset, filters corrupted audio, normalizes sampling rate
-
-python check_audio_quality.py    	 Detects corrupted or unreadable audio
-
-python make_clean_list.py         	Creates clean audio list used in all further processing
 
 > mfcc Feature Extraction
 
 python src/extract_mfcc_features.py
 
 
-
 > HuBERT Feature Extraction
 
  python src/hubert_feature_extraction.py
 
-> EVALUTION
-
-  python src/evaluate_model.py
 
 
+> COMBINE HuBERT FEATURES
+
+python src/combine_features.py
 
 
 > MODEL TRAINING
@@ -77,9 +65,139 @@ python src/train_classifier.py
 
 
 
-> Training from saved MFCC features
+> Training HuBert Model 
 
 python src/train_classifier_from_features.py
+
+
+>Train MFCC Model
+
+python src/train_mfcc_fast.py
+
+
+🔄 FAST MODEL REBUILD (OPTIONAL)
+
+
+Sometimes you may want to retrain the Logistic Regression classifier quickly without rerunning HuBERT extraction.
+For this purpose, we include:
+
+rebuild_classifier_from_features.py
+
+This script:
+
+Loads the already prepared
+
+data/features/features.npy  
+data/features/labels.npy  
+
+
+Retrains the same Logistic Regression classifier
+
+Saves fresh versions of:
+
+src/models/accent_classifier.pkl
+src/models/label_encoder.pkl
+
+
+Runs in a few seconds (much faster than full extraction)
+
+Run:
+
+python src/rebuild_classifier_from_features.py
+
+
+Use this script when:
+
+You want to rebuild the model after deleting .pkl files
+
+You made changes to the classifier settings
+
+You are debugging the Streamlit app
+
+You want a fresh model without reprocessing HuBERT embeddings
+
+
+> EVALUTION FOR HuBERT FEATURES 
+
+  python src/evaluate_model.py
+  
+> EVALUTION FOR mfcc FEATURES
+
+ python evaluate_mfcc_fast.py
+
+ > FINAL ACCENT PREDICTION
+
+python src/predict_accent.py
+
+
+ ▶️ Running the Application
+
+   Start the Streamlit app:
+
+   streamlit run src/webapp/app.py
+
+
+The web interface will open automatically at:
+
+     http://localhost:8501
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔬 OPTIONAL: DATA CLEANING / EXPERIMENTAL PREPROCESSING
+
+
+These scripts were used only for experimentation and are not required for the main pipeline.
+
+python preprocess.py
+python check_audio_quality.py
+python make_clean_list.py
+
+
+🔬 OPTIONAL: HU BERT LAYER-WISE ANALYSIS (Experimental)
+
+1️⃣ layer_analysis.py
+
+Runs full layer-wise evaluation on the entire dataset.
+
+python src/layer_analysis.py
+
+2️⃣ layer_analysis_fast.py
+
+Fast version — evaluates each HuBERT layer using a small random subset (≈80 files/class) and batch processing.
+
+python src/layer_analysis_fast.py
+
+3️⃣ layer_analysis_clean.py
+
+Uses a manually cleaned audio list to reduce noise and test layer stability.
+
+python src/layer_analysis_clean.py
+
+
+> EXPERIMENTAL VISUALIZATION SCRIPT
+
+python src/layer_analysis_plot.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 > ACCURACY, METRICS, CONFUSION MATRIX
@@ -115,17 +233,10 @@ python src/visualize_hubert.py
 python src/visuals.py
 
 
-> FINAL ACCENT PREDICTION
-
-python src/predict_accent.py
 
 
-▶️ Running the Application
-> Start Streamlit App
 
-streamlit run src/app.py
-The web interface will open automatically on:
-http://localhost:8501
+
 
 📊 Visualizations (included in visuals.py)
 MFCC Heatmap
