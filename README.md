@@ -437,9 +437,7 @@ Google Drive link:
 https://drive.google.com/file/d/1ImeuadaBP-JGf05-3HIc2GL1ecFdxh_-/view?usp=sharing
 
 🎥 Video Execution Demo
-You can watch the full project execution and walkthrough here:
-
-🔗 https://drive.google.com/file/d/1MtPVIe6sAcDAFAWIO9CbV_0v3Y5hqooh/view?usp=sharing
+https://drive.google.com/file/d/1MtPVIe6sAcDAFAWIO9CbV_0v3Y5hqooh/view?usp=sharing
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📌 Important Note on GitHub & Project Files
