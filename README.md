@@ -17,21 +17,32 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
 1️⃣ Clone the Repository
 
 git clone https://github.com/parinitay/Dakshina-NLI.git
+
+```bash
 cd Dakshina-NL
+```
 
 2️⃣ Create a Virtual Environment
+
+
+```bash
 python -m venv venv
+```
 
 3️⃣ Activate the Environment
 Windows:
-venv\Scripts\activate
 
+```bash
+venv\Scripts\activate
+```
 Mac/Linux:
 source venv/bin/activate
 
 4️⃣ Install Dependencies
-pip install -r requirements.txt
 
+```bash
+pip install -r requirements.txt
+```
 > IMPORT DATASET
 
 Download IndicAccentDB dataset from [HuggingFace.](https://huggingface.co/datasets/DarshanaS/IndicAccentDb)
@@ -46,37 +57,47 @@ andhra, kerala, karnataka, tamil, gujarat, jharkhand
 
 > mfcc Feature Extraction
 
+```bash
 python src/extract_mfcc_features.py
+```
+
 
 
 > HuBERT Feature Extraction
 
- python src/hubert_feature_extraction.py
-
+```bash
+python src/hubert_feature_extraction.py
+```
 
 
 > COMBINE HuBERT FEATURES
 
+```bash
 python src/combine_features.py
-
+```
 
 > MODEL TRAINING
 
 Training directly from audio
 
-python src/train_classifier.py             	
-
+          	
+```bash
+python src/train_classifier.py   
+```
 
 
 > Training HuBert Model 
 
-python src/train_classifier_from_features.py
+```bash
+python src/train_classifier_from_features.py   
+```
 
 
 >Train MFCC Model
 
+```bash
 python src/train_mfcc_fast.py
-
+```
 
 🔄 FAST MODEL REBUILD (OPTIONAL)
 
@@ -106,7 +127,9 @@ Runs in a few seconds (much faster than full extraction)
 
 Run:
 
+```bash
 python src/rebuild_classifier_from_features.py
+```
 
 
 Use this script when:
@@ -122,23 +145,31 @@ You want a fresh model without reprocessing HuBERT embeddings
 
 > EVALUTION FOR HuBERT FEATURES 
 
-  python src/evaluate_model.py
+  ```bash
+ python src/evaluate_model.py
+```
   
 > EVALUTION FOR mfcc FEATURES
 
+  ```bash
  python evaluate_mfcc_fast.py
+```
+ 
 
  > FINAL ACCENT PREDICTION
 
-python src/predict_accent.py
-
+ ```bash
+ python src/predict_accent.py
+```
 
  ▶️ Running the Application
 
    Start the Streamlit app:
 
-   streamlit run src/webapp/app.py
-
+  ```bash
+streamlit run src/webapp/app.py
+```
+   
 
 The web interface will open automatically at:
 
@@ -163,24 +194,32 @@ python make_clean_list.py
 
 Runs full layer-wise evaluation on the entire dataset.
 
+  ```bash
 python src/layer_analysis.py
+```
 
 2️⃣ layer_analysis_fast.py
 
 Fast version — evaluates each HuBERT layer using a small random subset (≈80 files/class) and batch processing.
 
+  ```bash
 python src/layer_analysis_fast.py
+```
+
 
 3️⃣ layer_analysis_clean.py
 
 Uses a manually cleaned audio list to reduce noise and test layer stability.
 
+  ```bash
 python src/layer_analysis_clean.py
-
+```
 
 > EXPERIMENTAL VISUALIZATION SCRIPT
 
+  ```bash
 python src/layer_analysis_plot.py
+```
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -200,20 +239,23 @@ MFCC Heatmap
 HuBERT Embedding Heatmap
 
 
-python src/visuals.py
 
+  ```bash
+python src/visuals.py
+```
 
 
 2️⃣ visualize_mfcc.py (Optional)
 
-
+  ```bash
 python src/visualize_mfcc.py
+```
 
 3️⃣ visualize_hubert.py (Optional)
 
-
+  ```bash
 python src/visualize_hubert.py
-
+```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -225,19 +267,25 @@ These scripts test how well the trained HuBERT model generalizes to unseen child
 
 Run:
 
+  ```bash
 python src/extract_child_features.py
+```
+
 
 2️⃣ test_child_generalization.py
 
 Run:
-
+  ```bash
 python src/test_child_generalization.py
+```
 
 3️⃣ child_generalization_metrics.py
 
 Run:
-
+  ```bash
 python src/child_generalization_metrics.py
+```
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -246,23 +294,31 @@ python src/child_generalization_metrics.py
 
 1️⃣extract_words_sentences.py
 
+  ```bash
 python src/extract_words_sentences.py
+```
 
 2️⃣evaluate_words_vs_sentences.py
 
+ ```bash
 python src/evaluate_words_vs_sentences.py
+```
+
 
 > VISUALS
 
 1️⃣words_sentences_confusion.py
 
+ ```bash
 python src/words_sentences_confusion.py
+```
 
 2️⃣words_sentences_barplot.py 
 
+
+ ```bash
 python src/words_sentences_barplot.py 
-
-
+```
 
 DAKSHINA WEBSITE OUTPUT 
 
