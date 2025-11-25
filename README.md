@@ -75,6 +75,59 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+> MAIN DEPENDENCIES
+
+```bash
+🔧 Core ML & Audio Processing torch==2.2.0+cpu
+torchaudio==2.2.0+cpu
+transformers==4.37.2
+librosa==0.10.1
+numpy==1.26.4
+scikit-learn==1.7.2
+scipy==1.15.3
+soundfile==0.12.1
+soxr==0.3.7
+```
+
+🌐 Model & Dataset Handling
+
+```bash
+huggingface-hub==0.23.0
+datasets==4.4.0
+```
+
+📊 Visualization 
+
+```bash
+matplotlib==3.10.7 
+seaborn==0.13.2
+```
+
+🧪 Evaluation 
+
+```bash
+evaluate==0.4.6
+tqdm==4.67.1
+```
+
+🖥 Web Application (Streamlit UI)
+
+```bash
+streamlit==1.51.0 
+streamlit-audiorec==0.1.3 
+streamlit-option-menu==0.4.0
+```
+
+🧰 Utility Libraries
+
+```bash
+ pandas==2.2.3
+ joblib==1.5.2
+ requests==2.32.5
+ python-dateutil==2.9.0.post0
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 > IMPORT DATASET
 
 Download IndicAccentDB dataset from [HuggingFace.](https://huggingface.co/datasets/DarshanaS/IndicAccentDb)
