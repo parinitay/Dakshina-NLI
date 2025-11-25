@@ -436,4 +436,21 @@ https://github.com/parinitay/Dakshina-NLI
 Google Drive link:
 https://drive.google.com/file/d/1ImeuadaBP-JGf05-3HIc2GL1ecFdxh_-/view?usp=sharing
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+📌 Important Note on GitHub & Project Files
+
+The GitHub repository for this project includes all essential source code, the Streamlit app, and the full structure needed to run the accent-detection system.
+Large files like the dataset, extracted features (.npy), and trained model checkpoints were not uploaded due to size limits.To ensure the evaluators have full access to everything, we have also provided a Google Drive link which includes:
+
+>✔ Entire project folder
+>✔ All datasets (IndicAccentDB subsets)
+>✔ Extracted MFCC & HuBERT features
+>✔ Trained Logistic Regression model files
+>✔ All scripts, visualizations, and analysis outputs
+>✔ WebApp assets and embeddings
+>✔ Child generalization files & experimental scripts
+If you want to quickly test or run the application, we recommend cloning the GitHub repository because it is lightweight and easy to set up.
+If you want the complete project, including training data and all experimental files, please use the Google Drive folder, as it contains the full working environment.
+
+Both links are included in the README for convenient access
