@@ -5,7 +5,49 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
 
  🗂️ Project Structure
  
-<img width="1000" height="4000" alt="output-onlinetools (2)" src="https://github.com/user-attachments/assets/216e5cbc-637a-4dbf-b00d-b02ca8e56d65" />
+
+📦 > speech-accent-project/
+│ 
+|── > data/
+│   ├── > IndicAccentDB/                
+│   ├── > features/                     
+│   │   ├── > features.npy              
+│   │   ├── > labels.npy                
+│   │   ├── > <state>_mfcc.npy          
+│                    
+│
+├── > src/
+│   ├── >  hubert_feature_extraction.py
+│   ├── > extract_mfcc_features.py
+│   ├── > combine_features.py
+│   ├── > train_classifier_from_features.py  
+│   ├── > rebuild_classifier_from_features.py 
+│   ├── > train_mfcc_fast.py                  
+│   ├── > evaluate_model.py                   
+│   ├── > evaluate_mfcc.py                    
+│   ├── > predict_accent.py                   
+│   │
+│   ├── > webapp/
+│   │   └── >  app.py                          
+│   │
+│   ├── > extract_child_features.py           
+│   ├── > test_child_generalization.py        
+│   └── > child_generalization_metrics.py     
+│   ├── > visuals.py                        
+│   ├── > visualize_mfcc.py                   
+│   └── > visualize_hubert.py                 
+│
+│   └── > models/
+│       ├── > accent_classifier.pkl           
+│       ├── > label_encoder.pkl               
+│
+├── > src/mfcc_models/
+│   ├── > mfcc_classifier.pkl                 
+│   └── > mfcc_label_encoder.pkl
+│
+├── > requirements.txt
+└── > README.md
+
 
 
 
@@ -154,7 +196,7 @@ python check_audio_quality.py
 python make_clean_list.py
 
 
-🔬 OPTIONAL: HU BERT LAYER-WISE ANALYSIS (Experimental)
+🔬 OPTIONAL: HuBERT LAYER-WISE ANALYSIS (Experimental)
 
 1️⃣ layer_analysis.py
 
@@ -180,80 +222,102 @@ python src/layer_analysis_clean.py
 python src/layer_analysis_plot.py
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
+🎨 VISUALIZATION TOOLS (Optional)
+
+1️⃣ visuals.py (Recommended)
+
+Combined visualization tool that shows:
+
+Waveform
+
+MFCC Heatmap
+
+HuBERT Embedding Heatmap
+
+
+python src/visuals.py
 
 
 
+2️⃣ visualize_mfcc.py (Optional)
 
 
+python src/visualize_mfcc.py
+
+3️⃣ visualize_hubert.py (Optional)
 
 
+python src/visualize_hubert.py
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+🔬 CHILD SPEECH GENERALIZATION (Optional)
 
+These scripts test how well the trained HuBERT model generalizes to unseen child speech.
 
+1️⃣ extract_child_features.py
 
+Run:
 
+python src/extract_child_features.py
 
+2️⃣ test_child_generalization.py
 
-
-> ACCURACY, METRICS, CONFUSION MATRIX
-
-python evaluate.py
-
-python src/confusion_style_metrics.py
-
-
-> WORD vs SENTENCE ANALYSIS
-
-python src/evaluate_words_vs_sentences.py
-
-
-> GENERALIZATION TESTS (CHILDREN AUDIO)
+Run:
 
 python src/test_child_generalization.py
 
+3️⃣ child_generalization_metrics.py
 
-
-> ROBUSTNESS & INTERPRETABILITY
-
-python src/layer_analysis_clean.py
-
-python src/interpretability_plot.py
-
-python src/robustness_visualization.py
-
-> VISUALIZATIONS
-
-python src/visualize_mfcc.py
-python src/visualize_hubert.py
-python src/visuals.py
-
-
-
-
-
-
-
-📊 Visualizations (included in visuals.py)
-MFCC Heatmap
-Waveform Plot
-Spectrogram
-HuBERT Embedding Heatmap
 Run:
-python src/visuals.py
+
+python src/child_generalization_metrics.py
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔬 WORD VS SENTENCE LEVEL (Optional)
 
 
-OUTPUT 
+1️⃣extract_words_sentences.py
+
+python src/extract_words_sentences.py
+
+2️⃣evaluate_words_vs_sentences.py
+
+python src/evaluate_words_vs_sentences.py
+
+> VISUALS
+
+1️⃣words_sentences_confusion.py
+
+python src/words_sentences_confusion.py
+
+2️⃣words_sentences_barplot.py 
+
+python src/words_sentences_barplot.py 
+
+
+
+DAKSHINA WEBSITE OUTPUT 
 
 <img width="1919" height="917" alt="Screenshot 2025-11-18 185606" src="https://github.com/user-attachments/assets/c02ccfae-5677-42a5-8e26-958ff6135685" />
 
+
+
 <img width="1917" height="929" alt="Screenshot 2025-11-18 185657" src="https://github.com/user-attachments/assets/6c7dffca-8d16-4d7e-bee5-97c3e5d34fb2" />
 
+
+
+
 <img width="1914" height="925" alt="Screenshot 2025-11-18 185721" src="https://github.com/user-attachments/assets/6de98fe8-5d3c-4cf4-9ab4-241ac5154cd2" />
+
+
+
 
 <img width="1912" height="927" alt="Screenshot 2025-11-18 185759" src="https://github.com/user-attachments/assets/48a15ca9-6d41-4297-b678-6674dc401f78" />
 
