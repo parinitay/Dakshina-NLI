@@ -322,5 +322,15 @@ DAKSHINA WEBSITE OUTPUT
 <img width="1912" height="927" alt="Screenshot 2025-11-18 185759" src="https://github.com/user-attachments/assets/48a15ca9-6d41-4297-b678-6674dc401f78" />
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+GitHub Repository link: 
+https://github.com/parinitay/Dakshina-NLI 
+	Some large files (dataset, checkpoints) could not be pushed due to size limits.
+
+
+Google Drive link:
+https://drive.google.com/file/d/1ImeuadaBP-JGf05-3HIc2GL1ecFdxh_-/view?usp=sharing
 
 
