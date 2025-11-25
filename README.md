@@ -6,12 +6,44 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
  🗂️ Project Structure
  
 
-<img width="763" height="845" alt="image" src="https://github.com/user-attachments/assets/dac5411a-ed47-4af4-8e2f-75f42e01a8e8" />
+```bash
+📦 speech-accent-project/
+│
+├── 📂 data/
+│   ├── 📂 IndicAccentDB/
+│   ├── 📂 features/
+│
+├── 📂 src/
+│   ├── 📄 hubert_feature_extraction.py
+│   ├── 📄 extract_mfcc_features.py
+│   ├── 📄 combine_features.py
+│   ├── 📄 train_classifier_from_features.py
+│   ├── 📄 rebuild_classifier_from_features.py
+│   ├── 📄 train_mfcc_fast.py
+│   ├── 📄 evaluate_model.py
+│   ├── 📄 evaluate_mfcc.py
+│   ├── 📄 predict_accent.py
+│   ├── 📂 webapp/
+│   │   └── 📄 app.py
+│   ├── 📄 extract_child_features.py
+│   ├── 📄 test_child_generalization.py
+│   └── 📄 child_generalization_metrics.py
+│   ├── 📄 visuals.py
+│   ├── 📄 visualize_mfcc.py
+│   └── 📄 visualize_hubert.py
+│
+├── 📂 src/mfcc_models/
+│   ├── 📄 mfcc_classifier.pkl
+│   └── 📄 mfcc_label_encoder.pkl
+│
+├── 📂 src/models/
+│   ├── 📄 accent_classifier.pkl
+│   └── 📄 label_encoder.pkl
+│
+├── 📄 requirements.txt
+└── 📄 README.md
 
-
-
-
-
+```
 
 📦 Installation & Setup
 1️⃣ Clone the Repository
