@@ -51,7 +51,7 @@ It uses HuBERT speech embeddings and a Logistic Regression classifier, wrapped i
 git clone https://github.com/parinitay/Dakshina-NLI.git
 
 ```bash
-cd Dakshina-NL
+cd Dakshina-NLI
 ```
 
 2️⃣ Create a Virtual Environment
